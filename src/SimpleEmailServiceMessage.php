@@ -335,7 +335,7 @@ final class SimpleEmailServiceMessage {
 	* @return boolean
 	*/
 	public function validate() {
-		if(count($this->to) == 0)
+		if(count($this->to)+count($this->cc)+count($this->bcc) == 0)
 			return false;
 		if($this->from == null || strlen($this->from) == 0)
 			return false;
